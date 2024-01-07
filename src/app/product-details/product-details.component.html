@@ -1,0 +1,13 @@
+<!-- product-details.component.html -->
+<div *ngIf="productDetails">
+    <h2>{{ productDetails.title }}</h2>
+    <p>Price: {{ productDetails.price | currency:'USD':'symbol' }}</p>
+    <!-- Add more details as needed -->
+  
+    <button type="button" (click)="addToCart(productDetails)">Add to Cart</button>
+  </div>
+  
+  <div *ngIf="!productDetails">
+    <p>Loading...</p>
+  </div>
+  
