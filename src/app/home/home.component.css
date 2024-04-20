@@ -1,71 +1,443 @@
-.container {
-    margin-top: 20px;
-  }
-  
-  .home-image {
-    text-align: center;
-  }
-  
-  .wider-image {
-   
-    height: auto;
-    width: 100%;
-    padding: 0px;
-    margin: 0px;
-  }
-  
-  .product-grid {
-    margin-top: 20px;
-  }
-  
-  .product-grid h2 {
-    text-align: center;
-  }
-  
-  .card {
-    margin-bottom: 20px;
-    height: 95%;
+/*======================================
+   Hero Area CSS
+========================================*/ 
+.hero-slider {
+	background: #fff;
+	overflow: hidden;
+}
+.hero-slider .single-slider {
+	background-size: 25% auto;
+    background-position: right 100px center;
+	background-repeat: no-repeat;
+    height: 510px;
+}
+.hero-slider .hero-text {
+	padding: 0 30px;
+	margin-top:100px;
+}
+.hero-slider .hero-text h1 {
+	line-height: 50px;
+	font-size: 47px;
+	font-weight: 700;
+	color: #F7941D;
+	margin-bottom: 20px;
+}
+.hero-slider .hero-text h1 span {
+	font-size: 20px;
+	display: block;
+	margin-bottom: 12px;
+	color: #333;
+	font-weight: 700;
+	line-height: initial;
+}
+.hero-slider .hero-text p {
+	color: #333;
+	margin-bottom: 35px;
+}
+.hero-slider .hero-text .button{
+	margin:0;
+}
+.hero-slider .hero-text .btn {
+	color: #fff;
+	background: #333;
+	padding: 13px 30px;
+	line-height: initial;
+	border: none;
+	height: auto;
+	z-index: 0;
+}
+.hero-slider .hero-text .btn:hover{
+	background:#F7941D;
+	color:#fff;
+}
+/*======================================
+   End Hero Area CSS
+====================================================================================================*/ 
+/*===================================================================================================
+   Start Small Banner CSS
+========================================*/ 
+.small-banner{
+	padding:30px 0;
+	padding-bottom:0;
+	
+}
+.small-banner .single-banner {
+	box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+	width:470px;
+	height:290px;
+}
+.small-banner .single-banner img{
+	padding-top: 50px;
+	margin-left: 180px;
+	width:230px;
+	height:270px;
+	-webkit-transition:all 0.4s ease;
+	-moz-transition:all 0.4s ease;
+	transition:all 0.4s ease;
+}
+.small-banner .single-banner .content {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	padding-left: 35px;
+}
+.small-banner .single-banner h3 {
+	font-size: 22px;
+	font-weight: 700;
+	text-transform: capitalize;
+	color: #333;
+}
+.small-banner .single-banner h3 span{
+	color:#F7941D;
+}
+.small-banner .single-banner p {
+	font-size: 15px;
+	color: #F7941D;
+	font-weight: 500;
+	margin-bottom: 5px;
+	text-transform: capitalize;
+}
+.small-banner .single-banner a {
+	color: #333;
+	margin-top: 22px;
+	display: block;
+	font-size: 12px;
+	font-weight:500;
+	display: inline-block;
+	text-transform:uppercase;
+	border-bottom:2px solid #333;
+}
+.small-banner .single-banner a:hover{
+	color:#F7941D;
+	border-color:#F7941D;
+}
+/*======================================
+   End Small Banner CSS
+==========================================================================================================*/ 
+/*=========================================================================================================
+   Start Mid Banner CSS
+========================================*/ 
+.midium-banner{
+	padding:0;
+	margin-bottom: 40px;
+}
+.midium-banner .single-banner{
+	width:540px;
+	height:330px;
+	position:relative;
+	box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    background-size: contain;
+	background-position:right 25px center;
+	background-repeat: no-repeat;
+	
+}
+.midium-banner .single-banner img{
+	width:500px;
+	height: 370px;
+	-webkit-transition:all 0.4s ease;
+	-moz-transition:all 0.4s ease;
+	transition:all 0.4s ease;
+}
+.midium-banner .single-banner .content {
+	padding-left:50px;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform:translateY(-50%);
+}
+.midium-banner .single-banner h3 {
+	font-size: 27px;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #333;
+	line-height: 30px;
+}
+.midium-banner .single-banner h3 span{
+	color:#F7941D;
+}
+.midium-banner .single-banner p {
+	font-size: 13px;
+	color: #F7941D;
+	font-weight: 500;
+	margin-bottom: 5px;
+	text-transform: uppercase;
+}
+.midium-banner .single-banner a {
+	display: inline-block;
+	font-weight: 600;
+	text-align: center;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	padding: .375rem .75rem;
+	font-size: 13px;
+	border-radius: .25rem;
+	background: #333;
+	color: #fff !important;
+	padding: 10px 27px;
+	border-radius: 30px;
+	margin-top: 25px;
+	text-transform: uppercase;
+}
+.midium-banner .single-banner a:hover{
+	background:#F7941D;
+	color:#fff;
+}
+/*======================================
+   End Mid Banner CSS
+=========================================================================================================*/ 
+/*=======================================================================================================
+   Start Most Popular CSS
+========================================*/
+.pro-tab-viewmore-wrap {
+	position: relative;
+	text-align: center;
+	
+}
+.pro-tab-viewmore-wrap .pro-viewmore {
+  position: absolute;
+  right: 40px;
+  top: 0;
+}
+
+.most-popular .single-product {
+    width: 255px;
+    height: 390px;
     display: flex;
     flex-direction: column;
-    border: 1px solid #ddd; 
-    border-radius: 8px; 
-  }
-  
-  .card-img-container {
+    justify-content: center; 
+    align-items: center; 
+}
+
+.most-popular .single-product .product-img {
+	transition: box-shadow 0.3s ease;
+    position: relative;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width:100%;
+    height:80%;
+}
+.most-popular .single-product .product-img img {
+    width: 220px; 
+    height:235px;
+}
+.most-popular .single-product .product-content{
+    width:100%;
+    height:20%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+	padding: 1px;   
+    margin:3px;
+}
+.single-product:hover .product-img {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.06);}
+
+.most-popular .single-product .product-content h3{  
+    height: 35px;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 100%;
-    max-height: 170px; 
-   
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.most-popular .single-product .product-content .product-price{  
+    height: 30px;
+    margin:0px;
+}
+.most-popular .label {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: white;
+    padding: 5px;
+    border-radius: 35px;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding:3px 8px 3px 8px;
+	z-index: 5;
+}
+
+.new {
+    background-color:#a67ba6;
+    
+}
+
+.hot {
+    background-color:red ;
+}
+
+.product-price {
+    font-size: 1em;
+    color: #333; /* Dark text for regular price */
+}
+
+.old-price {
+    text-decoration: line-through;
+    margin-right: 5px;
+    color: #999; /* Gray color for the old price */
+    font-size: 0.9em;
+}
+.discounted-price {
+    color: #d9534f; /* Bright red for the discounted price */
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+  /* Custom Navigation Arrows */
+  .custom-nav {
+	position:absolute;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Elevation effect */
+    color: #333; /* Color of the arrow icons */
+    padding: 0; 
+	width: 27px;
+    height: 65px; 
+    top: 50%; /* Position the arrows vertically in the middle */
+    transform: translateY(-50%); /* Center-align the arrows vertically */
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    cursor: pointer; /* Change cursor to pointer on hover */
+    z-index: 5; /* Ensure the arrows are above the images */
+    text-decoration: none; 
+}
+
+.custom-nav i {
+    margin: 0; 
+}
+  /* Change Arrow Box Background Color to Orange on Hover */
+  .custom-nav:hover {
+	color: #fff;
+	background-color: orange; 
+  }
+
+  .custom-nav:hover i {
+	color: #fff;
+  }
+
+  .custom-nav i {
+	font-size: 18px; 
   }
   
-  .product-image {
-    width: 150px;
-    height: 170px;
-   
+  /* To ensure the arrows are always visible */
+  .custom-nav button {
+	opacity: 1; 
   }
   
-  .card-body {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
+  /* Left Arrow */
+  .custom-nav-left {
+	left: 0; /* Position the left arrow on the left side */
   }
   
-  .card-text-container {
-    flex: 1;
+  /* Right Arrow */
+  .custom-nav-right {
+	right: 0; /* Position the right arrow on the right side */
   }
   
-  .card-title {
-    margin-bottom: 10px;
-  }
-  
-  .card-text {
-    margin-bottom: 10px;
-  }
-  
-  .btn-primary {
-    align-self: flex-end; /* Align the button to the end of the card body */
-  }
-  
+/*======================================
+   End Most Popular CSS
+======================================================================================================================*/
+/*=====================================================================================================================
+	Start Cowndown CSS
+===============================*/
+.cown-down {
+	position: relative;
+	height: 515px;
+	overflow:hidden;
+}
+.cown-down .padding-right{
+	padding-right:0;
+}
+.cown-down .padding-left{
+	padding-left:0;
+}
+.cown-down .image{
+	background-color: #FDFBEF;
+	height: 100%;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+.cown-down .image img {
+	width:70%;
+	height:95%;
+}
+.cown-down .content {
+	text-align: center;
+	background: #FDFBEF;
+	height: 100%;
+	position:relative;
+}
+.cown-down .content .heading-block{
+	position:absolute;
+	left:0;
+	top:50%;
+	transform:translateY(-50%);
+	padding: 75px;
+}
+.cown-down .content .small-title {
+	font-size: 13px;
+	color: #777;
+	display: block;
+	text-transform: uppercase;
+	margin-bottom: 5px;
+	font-weight: 600;
+}
+.cown-down .content .title {
+	font-size: 25px;
+	font-weight: 600;
+	margin-bottom: 20px;
+	text-transform: capitalize;
+}
+.cown-down .content .price {
+	margin-top: 35px;
+	font-size: 35px;
+	font-weight: 700;
+	color: #F7941D;
+}
+.cown-down .content .price s{
+	margin-top: 35px;
+	font-size: 24px;
+	font-weight: 500;
+	color:#666;
+}
+.cown-down .content .cdown {
+	float: none;
+	text-align:center;
+	margin-top:40px;
+	width: 80px;
+	display:inline-block;
+	
+}
+.cown-down .content .cdown {
+	text-align: center;
+}
+.cown-down .content .cdown{
+	display:inline-block;
+}
+.cown-down .content .cdown span {
+	color: #333;
+	font-size: 22px;
+	font-weight:400;
+	text-transform:uppercase;
+}
+.cown-down .content .cdown p{
+	font-size:13px;
+	color:#666;
+	text-transform:uppercase;
+}
+/*=============================
+	End Cowndown CSS
+=========================================================================================================================*/
+
+
+/* New style to ensure countdown elements are in a row */
+.clearfix{
+   display:flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+}

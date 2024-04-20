@@ -1,13 +1,16 @@
-<!-- product-details.component.html -->
-<div *ngIf="productDetails">
-    <h2>{{ productDetails.title }}</h2>
-    <p>Price: {{ productDetails.price | currency:'USD':'symbol' }}</p>
-    <!-- Add more details as needed -->
-  
-    <button type="button" (click)="addToCart(productDetails)">Add to Cart</button>
+<app-header-without-categories></app-header-without-categories>
+<div id="detail-container" *ngIf="productDetails">
+  <div class="card-txt-img">
+    <div id="text">
+       <h2>{{ productDetails.title }}</h2>
+       <p id="title">Price: {{ productDetails.price | currency:'USD':'symbol' }}</p>
+       <p id="desc">Description:{{productDetails.description}}</p>
+    </div>
+    <img class="card-img-top product-image" [src]="productDetails.image" alt="{{ productDetails.title }}">
   </div>
-  
-  <div *ngIf="!productDetails">
-    <p>Loading...</p>
-  </div>
+  <button type="button" (click)="addToCart(productDetails)">Add to Cart</button>
+</div>
+<div *ngIf="!productDetails">
+  <p>Loading...</p>
+</div>
   

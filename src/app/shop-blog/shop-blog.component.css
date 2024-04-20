@@ -1,0 +1,34 @@
+.shop-blog{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    width:1500px;
+    margin-bottom: 60px;
+}
+.product-cont{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:left;
+    height: 100%;
+    width:82%;   
+}
+.shop-blog .shop-single-blog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:380px;
+    height: 300px;
+    margin-left: 23px;
+}
+
+.shop-blog .shop-single-blog img {
+    width: 240px;
+    height: 260px; 
+}
+
+.shop-blog .shop-single-blog .content {
+	padding: 45px 10px 10px 10px;
+}

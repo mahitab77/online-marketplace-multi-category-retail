@@ -1,0 +1,226 @@
+<!-- Header -->
+<header *ngIf="showCategoriesHeader" class="header shop">
+	<!---------------------- Topbar -------------------->
+	<div class="topbar">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-md-12 col-12">
+					<!-- Top Left -->
+					<div class="top-left">
+						<ul class="list-main">
+								<li><i class="ti-headphone-alt"></i> +060 (800) 801-582</li>
+								<li><i class="ti-email"></i> support&#64;shophub.com</li>
+						</ul>
+					</div>
+					<!--/ End Top Left -->
+				</div>
+				<div class="col-lg-8 col-md-12 col-12">
+					<!-- Top Right -->
+					<div class="right-content">
+						<ul class="list-main">
+								<li><i class="ti-location-pin"></i> Store location</li>
+								<li><i class="ti-alarm-clock"></i> <a routerLink="">Daily deal</a></li>
+								<li><i class="ti-user"></i> <a routerLink="">My account</a></li>
+								<li><i class="ti-power-off"></i><a routerLink="">Login</a></li>
+						</ul>
+					</div>
+					<!-- End Top Right -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--------------------------------------------------------------------------------------------->
+	<!------------------------------------------- End Topbar -------------------------------------->
+	<!--------------------------------------------------------------------------------------------->
+	<div class="middle-inner">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-2 col-md-2 col-12">
+				    <!-------- Logo ---------->
+					<div class="logo">
+							<a routerLink=""><img src="assets/images/logo.png" alt="logo"></a>
+					</div>
+					<!-------/ End Logo ------->
+                <!------ Search------->			
+				<div class="search-top">			
+					<div class="top-search"><a title="search" routerLink=""><i class="ti-search"></i></a></div>
+						<!-- Search Form -->
+						<div class="search-top">
+							<form class="search-form">
+								<input type="text" placeholder="Search here..." name="search">
+								<button title="search" value="search" type="submit"><i class="ti-search"></i></button>
+							</form>
+						</div>
+						<!--/ End Search Form -->
+					</div>
+					<!--/ End Search -->
+					<div class="mobile-nav"></div>
+				</div>
+				<!-- Search Form top bar-->
+				<div class="col-lg-8 col-md-7 col-12">
+					<div class="search-bar-top">
+						<div class="search-bar">
+	
+							<select class="nice-select" title="cat" (change)="onCategorySelected($event)">
+								<option class="selectoption" value="All">All Category</option>
+								<option class="selectoption" *ngFor="let category of categories" [value]="category">{{ category }}</option>
+							</select>
+							  
+							<form (ngSubmit)="searchProducts()">
+								<input name="search" placeholder="Search Products Here....." type="search" [(ngModel)]="searchQuery"  required>
+								<button type="submit" title="searchprodhere" class="btnn"><i class="ti-search"></i></button>
+							</form>
+						</div>
+					</div>
+				</div>
+				<!--------------------------right middle bar/single bar/bookmark+account +cart---------------------->
+				<div class="col-lg-2 col-md-3 col-12">
+					<div class="right-bar">
+						<div class="sinlge-bar">
+								<a routerLink="" class="single-icon"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+						</div>
+						<div class="sinlge-bar">
+								<a routerLink="" class="single-icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+						</div>
+						<div class="sinlge-bar shopping">
+							<a routerLink="cart" class="single-icon"><i class="ti-bag"></i> <span class="total-count">{{itemcount}}</span></a>
+							<!-- Shopping Item -->
+							<div class="shopping-item">
+								<div class="dropdown-cart-header">
+										<span>{{ itemcount }} ITEMS</span>
+										<a routerLink="/cart">View Cart</a>
+								</div>
+								<ul class="shopping-list">
+									<li  *ngFor =" let item of cartItems">
+										<a  class="remove" (click)="remove(item.id)" title="Remove this item"><i class="fa fa-remove"></i></a>
+										<a class="cart-img" [routerLink]="['/product-details', item.id]"><img class="card-img-top product-image" [src]="item.image" alt="{{ item.title }}"></a>
+                                        <h4><a [routerLink]="['/product-details', item.id]">{{item.title}}</a></h4>
+                                        <p class="quantity"> {{ getQuantityFromComponent(item.id) }} x <span class="amount">Price: ${{ item.price }}</span></p>
+									</li>
+								</ul>
+								<div class="bottom">
+									<div class="total">
+											<span>Total</span>
+											<!-- Display the total amount dynamically -->
+											<span class="total-amount">${{ totalAmount.toFixed(2) }}</span>
+									</div>
+										<a routerLink="/checkout" (click)="onCheckout()" class="btn animate">Checkout</a>
+								</div>
+							</div>
+							<!--/ End Shopping Item -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!------------------------------------------ Header Inner ---------------------------------------------------------->
+	<div class="header-inner">
+		<div class="container">
+			<div class="cat-nav-head">
+				<div class="row">
+					<div class="col-lg-3">
+						<div class="all-category">
+							<h3 class="cat-heading"><i class="fa fa-bars" aria-hidden="true"></i>CATEGORIES</h3>
+							<ul class="main-category">
+								<li><a>New Arrivals <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+									<ul class="sub-category">
+										<li><a (click)="menuroute('jewelery'); $event.preventDefault()">accessories</a></li>
+										<li><a routerLink="">Top 100 offer</a></li>
+										<li><a routerLink="">Sunglass</a></li>
+										<li><a  (click)="menuroute('electronics'); $event.preventDefault()">Electronics</a></li>
+										<li><a  (click)="menuroute('kid\'s clothing'); $event.preventDefault()">Kid's product</a></li>
+										<li><a  (click)="menuroute('women\'s clothing'); $event.preventDefault()">Ladies</a></li>
+										<li><a routerLink="">western dress</a></li>
+										<li><a  (click)="menuroute('men\'s clothing'); $event.preventDefault()">Men Items</a><li>
+									</ul>
+								</li>
+								<li class="main-mega"><a routerLink="">best selling <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+									<ul class="mega-menu">
+											<li class="single-menu">
+												<a routerLink="" class="title-link">Shop Kid's</a>
+												<div class="image">
+													<img src="assets/images/shop-kids.webp" alt="kids-fashion">
+												</div>
+												<div class="inner-link">
+													<a (click)="menuroute('kid\'s clothing'); $event.preventDefault()">Kids Toys</a>
+													<a (click)="menuroute('kid\'s clothing'); $event.preventDefault()">Kids Travel Car</a>
+													<a (click)="menuroute('kid\'s clothing'); $event.preventDefault()">Kids Color Shape</a>
+													<a (click)="menuroute('kid\'s clothing'); $event.preventDefault()">Kids Tent</a>
+												</div>
+											</li>
+											<li class="single-menu">
+												<a routerLink="" class="title-link">Shop Men's</a>
+												<div class="image">
+													<img src="assets/images/shop-men.jpg" alt="men-fashion">
+												</div>
+												<div class="inner-link">
+													<a (click)="menuroute('men\'s clothing'); $event.preventDefault()">>Watch</a>
+													<a (click)="menuroute('men\'s clothing'); $event.preventDefault()">T-shirt</a>
+													<a (click)="menuroute('men\'s clothing'); $event.preventDefault()">Hoodies</a>
+													<a (click)="menuroute('men\'s clothing'); $event.preventDefault()">Formal Pant</a>
+												</div>
+											</li>
+											<li class="single-menu">
+												<a routerLink="" class="title-link">Shop Women's</a>
+												<div class="image">
+													<img src="assets/images/shop-women.webp" alt="women-fashion">
+												</div>
+												<div class="inner-link">
+													<a  (click)="menuroute('women\'s clothing'); $event.preventDefault()">Ladies Shirt</a>
+													<a  (click)="menuroute('women\'s clothing'); $event.preventDefault()">>Ladies Bag</a>
+													<a  (click)="menuroute('women\'s clothing'); $event.preventDefault()">Ladies Sun Glass</a>
+													<a  (click)="menuroute('women\'s clothing'); $event.preventDefault()">Ladies Watch</a>
+												</div>
+											</li>
+									</ul>
+								</li>
+								<li><a  (click)="menuroute('jewelery'); $event.preventDefault()">accessories</a></li>
+								<li><a routerLink="">Top 100 offer</a></li>
+								<li><a routerLink="">Sunglass</a></li>
+								<li><a  (click)="menuroute('electronics'); $event.preventDefault()">Electronics</a></li>
+								<li><a  (click)="menuroute('kid\'s clothing'); $event.preventDefault()">Kid's product</a></li>
+								<li><a  (click)="menuroute('women\'s clothing'); $event.preventDefault()">Ladies</a></li>
+								<li><a routerLink="">western dress</a></li>
+								<li><a  (click)="menuroute('men\'s clothing'); $event.preventDefault()">Men Items</a><li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-9 col-12">
+						<div class="menu-area">
+							<!-- Main Menu -->
+							<nav class="navbar navbar-expand-lg">
+								<div class="navbar-collapse">	
+									<div class="nav-inner">	
+											<ul class="nav main-menu menu navbar-nav">
+													<li class="active"><a routerLink="">Home</a></li>
+													<li><a routerLink="/shop-grid">Product</a></li>												
+													<li><a routerLink="">Service</a></li>
+													<li><a routerLink="">Shop<i class="ti-angle-down"></i><span class="new">New</span></a>
+														<ul class="dropdown">
+															<li><a routerLink="/shop-grid">Shop Grid</a></li>
+															<li><a routerLink="/cart">Cart</a></li>
+															<li><a routerLink="/checkout">Checkout</a></li>
+														</ul>
+													</li>
+													<li><a routerLink="">Pages</a></li>									
+													<li><a routerLink="">Blog<i class="ti-angle-down"></i></a>
+														<ul class="dropdown">
+															<li><a routerLink="/blog-single">Blog Single Sidebar</a></li>
+														</ul>
+													</li>
+													<li><a routerLink="/contact">Contact Us</a></li>
+											</ul>
+									</div>
+								</div>
+							</nav>
+							<!--/ End Main Menu -->	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--/ End Header Inner -->
+</header>
+<!--/ End Header -->

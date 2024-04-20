@@ -1,0 +1,53 @@
+
+
+.header.shop .header-inner {
+	height: 64px;
+}
+.menu-area{
+    height:100%;
+}
+.navbar{
+    height:100%;
+}
+.navbar-collapse{
+    height:100%;
+}
+.navbar .nav-inner{
+    height:100%; 
+}
+.navbar .nav-inner ul{
+    height: 100%;
+}
+.navbar .nav-inner li{
+    height: 100%;
+}
+
+.navbar .nav-inner a{
+    height: 64px;
+}
+/***********************/
+.header.shop .all-category {
+    height: 90%;  
+}
+
+.all-category h3{
+    height: 100%;
+    padding: 20px 25px;
+}
+/****************************/
+
+.header.shop .nav li .dropdown li a {
+	
+	padding: 8px 15px 0px 15px;
+	height: 40px;
+}
+.header.shop .nav li .dropdown {
+    height: auto !important;
+}
+/**************************/
+
+.shopping-item .shopping-list .product-image{
+   height:70px;
+   width:70px;
+   float: right;
+}

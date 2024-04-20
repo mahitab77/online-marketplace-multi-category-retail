@@ -1,0 +1,25 @@
+
+.error{
+    color:red;
+}
+.col-12{
+    width:860px;
+    display: flex;
+    flex-direction: row;
+}
+.shop.checkout .order-details {
+    margin-top: 150px;
+ 
+}
+/*************************************************/
+.radiobuttons{
+    display:flex;
+    flex-direction:column;
+    row-gap: 3px;
+    margin-left: 10px;
+}
+.single-widget.get-button .btn{
+   width:200px;
+  line-height:15px;
+  padding-top:6px ;
+}

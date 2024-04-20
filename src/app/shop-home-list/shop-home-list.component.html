@@ -1,0 +1,35 @@
+<!-- Start Shop Home List -->
+<section class="shop-home-list section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-12" *ngFor="let column of productColumns">
+        <div class="row">
+          <div class="col-12">
+            <div class="shop-section-title">
+              <h1>{{ column.title }}</h1>
+            </div>
+          </div>
+        </div>
+        <!-- Start Single List -->
+        <div class="single-list" *ngFor="let product of column.products">
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-12">
+              <div class="list-image overlay">
+                <img [src]="product.image" alt="{{ product.title }}">
+                <a [routerLink]="['/product-details', product.id]" class="buy"><i class="fa fa-shopping-bag"></i></a>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-12 no-padding">
+              <div class="content">
+                <h4 class="title"><a [routerLink]="['/product-details', product.id]">{{ product.title }}</a></h4>
+                <p class="price with-discount">$ {{ product.price }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Single List -->
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Shop Home List -->

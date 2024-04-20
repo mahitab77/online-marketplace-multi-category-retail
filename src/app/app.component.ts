@@ -1,47 +1,30 @@
-  import { Component, OnInit } from '@angular/core';
-  import { CartsrvService } from './cartsrv.service';
-  import { ProductSrvService } from './product-srv.service';
-  import { Product } from './product';
+import { Component } from '@angular/core';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { filter, map, mergeMap } from 'rxjs/operators';
+ 
   
   @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css']
   })
-  export class AppComponent implements OnInit {
-    title = 'Shopping Website';
-    itemcount!: number;
-    products: Product[] = [];
-    categories: string[] = [];
-    selectedCategory: string | null = null;
+  export class AppComponent  {
   
-    constructor(private cartService: CartsrvService, private productService: ProductSrvService) {}
-  
-    ngOnInit(): void {
-      this.cartService.cartitemcountobs$.subscribe((count) => {
-        this.itemcount = count;
-      });
-  
-      this.productService.getproduct().subscribe((data) => {
-        this.products = data;
-        this.categories = [...new Set(data.map(product => product.category))];
-      });
-    }
-  
-    sortProducts(sortBy: string): void {
-      if (sortBy === 'price') {
-        this.products.sort((a, b) => a.price - b.price);
-      } else if (sortBy === 'title') {
-        this.products.sort((a, b) => a.title.localeCompare(b.title));
+      showCategoriesHeader: boolean = true; 
+    
+      constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+        this.router.events.pipe(
+          filter(event => event instanceof NavigationEnd),
+          map(() => this.activatedRoute),
+          map(route => {
+            while (route.firstChild) route = route.firstChild;
+            return route;
+          }),
+          filter(route => route.outlet === 'primary'),
+          mergeMap(route => route.data)
+        ).subscribe(data => {
+          this.showCategoriesHeader = !data['hideCategoriesHeader'];
+        });
       }
     }
-  
-    filterProductsByCategory(category: string | null): void {
-      this.selectedCategory = category;
-      this.productService.getProductsByCategory(category).subscribe((filteredProducts) => {
-        // Handle the filtered products as needed
-        this.products = filteredProducts;
-      });
-    }
-  }
-  
+    

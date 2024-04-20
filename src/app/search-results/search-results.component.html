@@ -1,0 +1,15 @@
+<app-header-without-categories></app-header-without-categories>
+
+<div class="search-results">
+  <div *ngFor="let product of products" class="product-item">
+    <a [routerLink]="['/product-details', product.id]" class="product-link">
+       <img [src]="product.image" alt="{{ product.title }}" class="product-img">
+       <div class="product-details">
+           <h3 class="product-title">{{ product.title }}</h3>
+           <p class="product-description">{{ product.description }}</p>
+           <p class="product-price">${{ product.price }}</p>
+       </div>
+    </a>
+  </div>
+</div>
+

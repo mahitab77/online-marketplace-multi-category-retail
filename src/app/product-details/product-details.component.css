@@ -1,31 +1,73 @@
 /* product-details.component.css */
-div {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
+#detail-container{
+    margin: 15px auto;
+    padding: 15px;
+    border: 2px solid #ccc;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width:60%;
+    height:66%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 0px;
+    align-items: center;
+  }
+  .card-txt-img{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:92%;
+  
+  }
+  #text{
+    width:60%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:left;
+    row-gap: 10px;
+ 
   }
   
   h2 {
+    width:100%;
     color: #333;
+    font-size: 28px;
+    font-weight: 700;
+    
   }
+  #title {
+    margin: 5px 0;
+    font-size: 15px;
+    font-weight: 700;
+    color:#F7941D;
+  }
+  #desc{
+    margin-top: 5px;
+    font-weight: 500;
   
-  p {
-    margin: 10px 0;
+  }
+  img{
+    width:33%;
+    height:70%;
   }
   
   button {
-    padding: 10px;
-    background-color: #4caf50;
+    margin-top: 5px;
+    background-color:#F7941D;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    width:70%;
+    height: 35px;
   }
   
   button:hover {
-    background-color: #45a049;
+    background-color: #a0a1a0;
+    color:#F7941D;
   }
   

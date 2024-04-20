@@ -1,0 +1,28 @@
+<!-- Start Shop Blog -->
+<section class="shop-blog section">
+    <div class="container">
+          <div class="section-title">
+          <h2>From Our Blog</h2>
+          </div>
+    </div>
+    <div class="product-cont">
+    <!-- Modify this part to display specific products by ID -->
+    <div *ngFor="let product of products">
+          <!-- Use *ngIf to filter products by ID -->
+          <ng-container *ngIf="product.id === 19 || product.id === 4 || product.id === 2">
+             <!-- Start Single Blog -->
+             <div class="shop-single-blog">
+                <img [src]="product.image" alt="#">
+                <div class="content">
+                    <p class="date">22 July, 2020. Monday</p>
+                    <a [routerLink]="['/product-details', product.id]" class="title">{{ product.title }}</a>
+                    <a [routerLink]="['/product-details', product.id]" class="more-btn">Continue Reading</a>
+                </div>
+             </div>
+             <!-- End Single Blog -->
+          </ng-container>
+    </div> 
+    </div>
+</section>
+  <!-- End Shop Blog -->
+  

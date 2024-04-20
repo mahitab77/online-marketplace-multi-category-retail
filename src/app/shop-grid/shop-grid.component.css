@@ -1,0 +1,73 @@
+/* Style for the slider bar*/
+.ngx-slider .ngx-slider-bar {
+    background-color: orange !important;
+  }
+  
+  .ngx-slider .ngx-slider-pointer {
+    background-color: orange;
+    width: 15px;  
+    height: 15px; 
+  }
+  /* Style for the price range text */
+  .ngx-slider .price-range-label {
+    color: black;
+  }
+  
+  a{
+    cursor: pointer;
+  }
+  .list-view {
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    height: 100%;
+    align-items: center;
+}
+
+.list-view .single-product {
+    width:60%;
+    height: 25%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list-view .single-product .product-img .default-img{
+    height: 170px;
+    width:140px;
+    flex-basis: 30%;
+    margin-right: 20px;
+}
+
+.list-view .single-product .product-content {
+  display: flex;
+  width:90%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-view .product-description {
+    flex-basis: 70%;
+}
+/**********************************/
+.grid-view .single-product{
+  height: 400px;
+  width:100%;
+}
+.single-product .product-img .default-img{
+  margin-top:5px;
+  height: 260px;
+  width:96%;
+  margin-left:6px;
+
+}
+.single-product .product-content{
+  height: 30%;
+
+}
+.single-product .product-content h3{
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+}

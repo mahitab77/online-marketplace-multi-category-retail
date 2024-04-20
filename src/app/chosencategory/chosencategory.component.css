@@ -1,0 +1,90 @@
+/* General container styling */
+.container {
+    width: 80%;
+    margin-top:50px;
+    overflow: hidden;
+    background-color: hsl(165, 11%, 93%);
+}
+
+/* Heading */
+h2 {
+    text-align: center;
+    margin-top: 35px;
+    color: #414141;
+    font-size: 30px;
+    margin-bottom: 35px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+}
+
+/* Row and column layout */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.col-md-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+/* Card styling */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    height: 500px;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-img-top {
+    margin-top: 25px;
+    width:210px;
+    height: 290px;
+}
+
+.card-body {
+    padding: 15px;
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 0px;
+}
+
+.card-title {
+    margin-bottom: 10px;
+    font-size: 1em;
+    height: 35%;
+}
+
+.card-text {
+    font-size: 0.9em;
+    height: 12%;
+    color: #555;
+}
+
+/* Button styling */
+.btn-primary {
+    background-color: #3b3c3c;
+    border-color: #3b3c3c;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #eb941c;
+    border-color: #eb941c;
+}

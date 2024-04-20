@@ -23,21 +23,21 @@ export class ProductDetailsComponent implements OnInit {
   
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-      // Get the productId from the route parameters
       const idParam = params.get('id');
-
-      // Check if idParam is not null before attempting conversion
       if (idParam !== null) {
-        // Convert the string to a number
-        this.productId = +idParam;
-        console.log('Product ID:', this.productId);
-
-        // Fetch the product details using the service
-        this.productService.getProductById(this.productId)?.subscribe(data => {
-          this.productDetails = data;
-        });
-      } else {
-        console.error('Product ID is null.');
+        const productId = +idParam;
+        this.productService.getProductById(productId).subscribe(
+          product => {
+            if (product) {
+              this.productDetails = product;
+            } else {
+              console.log('Product not found');
+            }
+          },
+          error => {
+            console.error('Error fetching product:', error);
+          }
+        );
       }
     });
   }
@@ -45,3 +45,4 @@ export class ProductDetailsComponent implements OnInit {
     this.Cartsrv.addToCart(productsincart);
   }
 }
+

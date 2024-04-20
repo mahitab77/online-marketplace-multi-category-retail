@@ -1,0 +1,45 @@
+
+.shopping-cart .total-amount .left label{
+    margin-top: 10px;
+    font-size: 16px;
+    color: rgb(119, 119, 120);
+}
+/**********@@@@@@@@@@@@@@@@@@@@@@*******/
+.image{
+ 
+}
+.image img {
+  width:70%;
+  height:74%;
+  margin-left: 10px;
+}
+/**********@@@@@@@@@@@@@@@@@@@@@@*******/
+
+.shipping-note {
+    font-size: 0.8rem; 
+    color: #e4a316; 
+    margin-top: 5px; 
+}
+
+.free-shipping-note {
+    font-size: 0.8rem;
+    color: #28a745; /* A green color to highlight the positive message */
+    margin-top: 5px;
+  }
+
+.coupon-success-msg {
+    color: #28a745; /* Green color */
+    margin-top: 10px;
+  }
+  /**********@@@@@@@@@@@@@@@@@@@@@@*******/
+  .product-des p{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Number of lines to display */
+  -webkit-box-orient: vertical;
+  max-height: 2.4em; /* Adjust this to control the height of the two lines */
+  line-height: 1.2em; /* Adjust this to control the line height */
+
+  }
+  
