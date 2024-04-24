@@ -1,7 +1,8 @@
 
-# online-marketplace(multi-category-retail)
+## online-marketplace(multi-category-retail)
 
-
+## live website 
+you can view live website on vercel : https://online-marketplace-multi-category-retail.vercel.app/home
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.3.
 
@@ -28,6 +29,5 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-=======
-# online-marketplace-multi-category-retail
->>>>>>> 9b9be331a6565edb6898741b2f95af97ff038f90
+
+
