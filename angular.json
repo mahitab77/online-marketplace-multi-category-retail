@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "practice14": {
+    "eshopproject": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/practice14",
+            "outputPath": "dist/eshopproject",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -37,13 +37,24 @@
             "styles": [
               "src/custom-theme.scss",
               "./node_modules/bootstrap/dist/css/bootstrap.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "./node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
               "./node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
+              "src/custom-theme.scss",
+              "src/assets/css/bootstrap.css",
+              "src/assets/css/magnific-popup.min.css",
+              "src/assets/css/font-awesome.css",
+              "src/assets/css/jquery.fancybox.min.css",
+              "src/assets/css/themify-icons.css",
+              "src/assets/css/niceselect.css",
+              "src/assets/css/animate.css",
+              "src/assets/css/slicknav.min.css",
+              "src/assets/css/reset.css",
+              "src/assets/css/responsive.css",
               "src/styles.css"
             ],
-            "scripts": [
-              "./node_modules/jquery/dist/jquery.min.js",
+            "scripts": [   
               "./node_modules/popper.js/dist/umd/popper.min.js",
               "./node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
@@ -76,10 +87,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "practice14:build:production"
+              "buildTarget": "eshopproject:build:production"
             },
             "development": {
-              "buildTarget": "practice14:build:development"
+              "buildTarget": "eshopproject:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -87,7 +98,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "practice14:build"
+            "buildTarget": "eshopproject:build"
           }
         },
         "test": {

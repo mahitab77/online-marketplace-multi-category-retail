@@ -1,7 +1,4 @@
 /* =====================================
-Template Name: Eshop
-Author Name: Naimur Rahman
-Author URI: http://www.wpthemesgrid.com/
 Description: Eshop - eCommerce HTML5 Template.
 Version:1.0
 ========================================*/
@@ -323,7 +320,7 @@ big {
 ===============================*/
 .demo-section{
 	width: 100%;
-	background-image: url('../images/demo-bg.jpg');
+	/*background-image: url('../images/demo-bg.jpg');*/
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;

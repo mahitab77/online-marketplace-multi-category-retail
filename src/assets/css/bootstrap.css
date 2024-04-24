@@ -68,9 +68,11 @@
     h2,
     h3,
     p {
-        orphans: 3;
-        widows: 3
+       /* orphans: 3;
+        widows: 3*/
+        page-break-after: avoid
     }
+    
     h2,
     h3 {
         page-break-after: avoid
@@ -100,18 +102,22 @@
     box-sizing: border-box
 }
 
-html {
+/*html {
     font-family: sans-serif;
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     -ms-overflow-style: scrollbar;
     -webkit-tap-highlight-color: transparent
+}*/
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%; /* Non-prefixed version */
+    text-size-adjust: 100%; /* Keep if targeting older mobile browsers */
+    -webkit-tap-highlight-color: transparent; /* Consider keeping for iOS WebKit browsers */
 }
 
-@-ms-viewport {
-    width: device-width
-}
 
 article,
 aside,
@@ -234,12 +240,19 @@ sup {
     top: -.5em
 }
 
+
 a {
     color: #007bff;
     text-decoration: none;
     background-color: transparent;
-    -webkit-text-decoration-skip: objects
 }
+
+@supports (text-decoration-skip-ink: auto) {
+    a {
+        text-decoration-skip-ink: auto;
+    }
+}
+
 
 a:hover {
     color: #0056b3;
@@ -357,7 +370,8 @@ select {
 [type=submit],
 button,
 html [type=button] {
-    -webkit-appearance: button
+    -webkit-appearance: button;
+    appearance: button   ;   
 }
 
 [type=button]::-moz-focus-inner,
@@ -378,7 +392,9 @@ input[type=date],
 input[type=datetime-local],
 input[type=month],
 input[type=time] {
-    -webkit-appearance: listbox
+    -webkit-appearance: listbox;
+    appearance: listbox;
+
 }
 
 textarea {
@@ -416,7 +432,8 @@ progress {
 
 [type=search] {
     outline-offset: -2px;
-    -webkit-appearance: none
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 [type=search]::-webkit-search-cancel-button,
@@ -1883,7 +1900,7 @@ pre code {
         display: block;
         width: 100%;
         overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
+          /* -webkit-overflow-scrolling: touch;*/
         -ms-overflow-style: -ms-autohiding-scrollbar
     }
     .table-responsive-sm.table-bordered {
@@ -1896,7 +1913,7 @@ pre code {
         display: block;
         width: 100%;
         overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
+         /* -webkit-overflow-scrolling: touch;*/
         -ms-overflow-style: -ms-autohiding-scrollbar
     }
     .table-responsive-md.table-bordered {
@@ -1909,7 +1926,7 @@ pre code {
         display: block;
         width: 100%;
         overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
+       /* -webkit-overflow-scrolling: touch;*/
         -ms-overflow-style: -ms-autohiding-scrollbar
     }
     .table-responsive-lg.table-bordered {
@@ -1922,7 +1939,7 @@ pre code {
         display: block;
         width: 100%;
         overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
+         /* -webkit-overflow-scrolling: touch;*/
         -ms-overflow-style: -ms-autohiding-scrollbar
     }
     .table-responsive-xl.table-bordered {
@@ -1934,7 +1951,7 @@ pre code {
     display: block;
     width: 100%;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+     /* -webkit-overflow-scrolling: touch;*/
     -ms-overflow-style: -ms-autohiding-scrollbar
 }
 
@@ -3647,9 +3664,12 @@ tbody.collapse.show {
     border-radius: .25rem
 }
 
-.custom-file-control:lang(en):empty::after {
+/*.custom-file-control:lang(en):empty::after {
     content: "Choose file..."
-}
+}*/
+.custom-file-control:empty::after {
+    content: "Choose file...";
+  }
 
 .custom-file-control::before {
     position: absolute;
@@ -3667,9 +3687,11 @@ tbody.collapse.show {
     border-radius: 0 .25rem .25rem 0
 }
 
-.custom-file-control:lang(en)::before {
+/*.custom-file-control:lang(en)::before {
     content: "Browse"
-}
+}*/
+.custom-file-control::before {
+    content: "Browse"}
 
 .nav {
     display: -ms-flexbox;
@@ -5207,7 +5229,8 @@ button.close {
     padding: 0;
     background: 0 0;
     border: 0;
-    -webkit-appearance: none
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 .modal-open {

@@ -10,8 +10,9 @@ import { map, catchError} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ProductSrvService {
-  private apiurl='http://fakestoreapi.com/products'
+  //private apiurl='http://fakestoreapi.com/products'
   private localDataUrl = 'assets/t-data.json';
+  private localDataUrls = 'assets/s-data.json';
 
   private selectedCategorySubject = new BehaviorSubject<string | null>(null);
 
@@ -23,7 +24,10 @@ export class ProductSrvService {
 
   getproduct(): Observable<Product[]> {
     // Fetch products from the API
-    const apiProducts = this.http.get<Product[]>(this.apiurl);
+   // const apiProducts = this.http.get<Product[]>(this.apiurl);
+   const apiProducts = this.http.get<{ products: Product[] }>(this.localDataUrls).pipe(
+    map(data => data.products)
+  ); 
 
     // Fetch local JSON data
     const localProducts = this.http.get<{ products: Product[] }>(this.localDataUrl).pipe(
@@ -38,7 +42,10 @@ export class ProductSrvService {
 
   getProductById(productId: number): Observable<Product | undefined> {
     // Fetch product from API
-    const apiProduct = this.http.get<Product>(`${this.apiurl}/${productId}`);
+    //const apiProduct = this.http.get<Product>(`${this.apiurl}/${productId}`);
+    const apiProduct =this.http.get<{ products: Product[] }>(this.localDataUrls).pipe(
+                      map(data => data.products.find(product => product.id === productId))
+    );
   
     // Fetch all products from local JSON and find the one with the matching ID
     const localProduct = this.http.get<{ products: Product[] }>(this.localDataUrl).pipe(
@@ -58,8 +65,15 @@ export class ProductSrvService {
     }
   
     // Fetch and filter products from the API
-    const apiProducts = this.http.get<Product[]>(this.apiurl).pipe(
+    /*const apiProducts = this.http.get<Product[]>(this.apiurl).pipe(
       map(products => products.filter(product => product.title.toLowerCase().includes(query.toLowerCase()))),
+      catchError(error => {
+        console.error(error);
+        return of([] as Product[]);
+      })
+    );*/
+    const apiProducts=this.http.get<{ products: Product[] }>(this.localDataUrls).pipe(
+      map(data => data.products.filter(product => product.title.toLowerCase().includes(query.toLowerCase()))),
       catchError(error => {
         console.error(error);
         return of([] as Product[]);
@@ -106,10 +120,12 @@ export class ProductSrvService {
     }
   
     // Fetch products from the API
-    const apiProducts = this.http.get<Product[]>(this.apiurl).pipe(
+   /* const apiProducts = this.http.get<Product[]>(this.apiurl).pipe(
       map(products => products.filter(product => product.category === category))
+    );*/
+    const apiProducts=this.http.get<{ products: Product[] }>(this.localDataUrls).pipe(
+      map(data => data.products.filter(product => product.category === category))
     );
-  
     // Fetch local JSON data and filter by category
     const localProducts = this.http.get<{ products: Product[] }>(this.localDataUrl).pipe(
       map(data => data.products.filter(product => product.category === category))
@@ -123,7 +139,7 @@ export class ProductSrvService {
   
 //////////////////////
   getFirstProductByCategory(category: string): Observable<Product | undefined> {
-    return this.http.get<Product[]>(`${this.apiurl}?category=${category}&limit=1`).pipe(
+    return this.http.get<Product[]>(`${this.localDataUrls}?category=${category}&limit=1`).pipe(
       map(products => (products.length > 0 ? products[0] : undefined))
     );
   }
