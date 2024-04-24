@@ -1,5 +1,10 @@
+
 <<<<<<< HEAD
-# eshopproject
+# eshopproject is an online-marketplace(multi-category-retail) sample
+=======
+# online-marketplace-(multi-category-retail)
+
+>>>>>>> 2708be07a4da600ac08ad06407a31cd42a4c1032
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.3.
 
