@@ -1,8 +1,5 @@
 
-<<<<<<< HEAD
-# eshopproject is an online-marketplace(multi-category-retail) sample
-=======
-# online-marketplace-(multi-category-retail)
+# online-marketplace(multi-category-retail)
 
 >>>>>>> 2708be07a4da600ac08ad06407a31cd42a4c1032
 
